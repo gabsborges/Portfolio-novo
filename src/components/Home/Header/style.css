@@ -1,0 +1,96 @@
+.header {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+}
+
+.header-name {
+    display: flex;
+    align-items: center;
+}
+
+.header-name h1 {
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 2s steps(15) alternate,
+        800ms steps(15) infinite normal;
+}
+
+.header-name span {
+    font-weight: bold;
+    color: #fff;
+    font-size: 32px;
+    animation: cursor 1s ease-in-out infinite;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.header-name h1 span {
+    animation: blink 1.3s infinite;
+}
+
+.header-time {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-time p {
+    font-weight: bold;
+    color: #fff;
+}
+
+.header-time p span {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0 2px;
+    color: #fff;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
