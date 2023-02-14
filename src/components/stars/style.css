@@ -1,0 +1,18 @@
+.constelations {
+    position: relative;
+}
+
+.constelations span {
+    position: absolute;
+    content: '';
+    background-color: #fff;
+}
+
+@keyframes thinkle {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

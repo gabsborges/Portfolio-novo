@@ -19,8 +19,6 @@ export default function Header() {
         }
     }
 
-
-
     setInterval(() => {
         setReplaceHours(new Date().getHours())
         setReplaceMinutes(new Date().getMinutes())

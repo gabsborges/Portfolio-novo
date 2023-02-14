@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import '../App.css'
+import Clouds from '../components/Home/clouds';
 import Header from '../components/Home/Header'
+import Stars from '../components/stars';
 
 export default function Home() {
 
@@ -10,12 +12,14 @@ export default function Home() {
     const afternoon = '#64A6AB, #B2D5A4';
     const night = '#27333F, #453C67';
 
-    const [dayTime, setDayTime] = useState(morning)
+    const [dayTime, setDayTime] = useState(null)
+
+
 
     useEffect(() => {
-        if (timeOfDay <= 20) return setDayTime(morning)
-        if (timeOfDay > 20 || timeOfDay <= 40) return setDayTime(afternoon)
-        if (timeOfDay > 40) return setDayTime(night)
+        if (timeOfDay <= 20) setDayTime(morning)
+        if (timeOfDay > 20 && timeOfDay < 40) setDayTime(afternoon)
+        if (timeOfDay >= 40) setDayTime(night)
     }, [timeOfDay])
 
     setInterval(() => {
@@ -25,21 +29,12 @@ export default function Home() {
     return (
         <div className='home' style={{ background: `linear-gradient(${dayTime})`, width: '100vw', height: "100vh" }}>
             <Header />
-            <div className='clouds' style={{width: '100%', height: "200px"}}>
-                <img src='./sunny.png' alt='Sunny' style={{ width: '150px',top: '10px'}} />
-                <img src='./cloud1.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud2.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud3.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud4.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud5.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud1.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud2.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud1.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud4.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud5.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud4.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-                <img src='./cloud5.png' alt='cloud' style={{ top: `${Math.floor(Math.random() * 80)}px`}} />
-            </div>
+            {timeOfDay >= 40 || timeOfDay <= 15 ? 
+            <Stars/>: null}
+            <Clouds
+            dayOrNight={timeOfDay}
+            />
+
         </div>
     )
 }
