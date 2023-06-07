@@ -1,42 +1,46 @@
-"use client"
-
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { LogoBranca } from "./logo-branca";
 
-const HeaderBar = styled.div`
-    width: 80%;
-    padding: 30px 0;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`
+const MenuBar = styled.div`
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 const HeaderMenuUl = styled.ul`
-    display: flex;
-    list-style: none;
-    gap: 38px;
-`
+  display: flex;
+  list-style: none;
+  gap: 38px;
+`;
 
-const HeaderMenuLi = styled.li`
+const HeaderMenuLi = styled.li``;
 
-`
+const HeaderMenuLink = styled.a`
+  color: white;
+  text-decoration: none;
+`;
 
-const HeaderMenuA = styled.a`
-    color: white;
-    text-decoration: none;
-`
+const menuItems = [
+  { label: "Sobre Mim", url: "#sobreMim" },
+  { label: "Conhecimentos", url: "/" },
+  { label: "Projetos", url: "/" },
+  { label: "Contato", url: "/" },
+];
 
 export function Header() {
-    return (
-        <HeaderBar>
-            <LogoBranca/>
-            <HeaderMenuUl>
-                <HeaderMenuLi><HeaderMenuA href="">Sobre Mim</HeaderMenuA></HeaderMenuLi>
-                <HeaderMenuLi><HeaderMenuA href="">Conhecimentos</HeaderMenuA></HeaderMenuLi>
-                <HeaderMenuLi><HeaderMenuA href="">Projetos</HeaderMenuA></HeaderMenuLi>
-                <HeaderMenuLi><HeaderMenuA href="">Contato</HeaderMenuA></HeaderMenuLi>
-            </HeaderMenuUl>
-        </HeaderBar>
-    )
+  return (
+    <>
+      <MenuBar>
+        <LogoBranca />
+        <HeaderMenuUl>
+          {menuItems.map((item, index) => (
+            <HeaderMenuLi key={index}>
+              <HeaderMenuLink href={item.url}>{item.label}</HeaderMenuLink>
+            </HeaderMenuLi>
+          ))}
+        </HeaderMenuUl>
+      </MenuBar>
+    </>
+  );
 }
