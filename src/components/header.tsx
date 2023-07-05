@@ -27,9 +27,8 @@ const HeaderMenuLink = styled.a`
 
 const menuItems = [
   { label: "Sobre Mim", url: "#sobreMim" },
-  { label: "Conhecimentos", url: "/" },
-  { label: "Projetos", url: "/" },
-  { label: "Contato", url: "/" },
+  { label: "Conhecimentos", url: "#conhecimentos" },
+  { label: "Projetos", url: "#projetos" },
 ];
 
 export function Header() {
