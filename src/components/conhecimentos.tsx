@@ -75,17 +75,31 @@ const Card = styled.div<CardProps>`
   }
 `;
 
-const Message = styled.div<CardProps>`
+const MessageCard = styled.div<CardProps>`
   padding-top: 50px;
+  line-height: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  opacity: ${(props) => (props.show ? 1 : 0)};
+  pointer-events: ${(props) => (props.show ? 'auto' : 'none')};
+  transition: opacity 0.2s;
+`;
+
+const MessageTitle = styled.div`
+  padding-bottom: 10px;
+  color: var(--primary-color);
+  font-size: 32px;
+`;
+
+const Message = styled.div`
   line-height: 2;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  opacity: ${(props) => (props.show ? 1 : 0)};
-  pointer-events: ${(props) => (props.show ? 'auto' : 'none')};
-  transition: opacity 0.2s;
 `;
 
 const menuItems = [
@@ -125,9 +139,11 @@ const messages: Messages = {
 export function Conhecimentos() {
   const [showMessage, setShowMessage] = useState(false);
   const [message, setMessage] = useState('');
+  const [title, setTitle] = useState('');
 
   const handleMouseEnter = (label: string) => {
     setMessage(messages[label] || '');
+    setTitle(label || '');
     setShowMessage(true);
   };
 
@@ -136,7 +152,7 @@ export function Conhecimentos() {
   };
 
   return (
-    <Section>
+    <Section id="conhecimentos">
       <H1>Conhecimentos</H1>
       <Cards>
         {menuItems.map((item) => (
@@ -150,7 +166,10 @@ export function Conhecimentos() {
           </Card>
         ))}
       </Cards>
-      <Message show={showMessage}>{message}</Message>
+      <MessageCard show={showMessage}>
+        <MessageTitle>{title}</MessageTitle>
+        <Message>{message}</Message>
+      </MessageCard>
     </Section>
   );
 }
