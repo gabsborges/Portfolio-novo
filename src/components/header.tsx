@@ -7,8 +7,21 @@ const MenuBar = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 460px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   > svg {
     cursor:pointer;
+
+    @media screen and (max-width: 590px) {
+    width: 70px;
+  }
+
+    @media screen and (max-width: 460px) {
+    width: 90px;
+  }
   }
 `;
 
@@ -16,6 +29,11 @@ const HeaderMenuUl = styled.ul`
   display: flex;
   list-style: none;
   gap: 38px;
+
+  @media screen and (max-width: 590px) {
+    gap: 20px;
+    font-size: 14px;
+  }
 `;
 
 const HeaderMenuLi = styled.li``;

@@ -3,6 +3,14 @@ import { ArrowDiagonalIcon } from "./arrowDiagonal";
 
 const Section = styled.section`
   padding: 100px 0 50px 0;
+
+  @media screen and (max-width: 870px) {
+    padding: 40px 0 30px 0;
+  }
+
+  @media screen and (max-width: 590px) {
+      padding: 40px 0 30px 20px;
+    }
 `;
 
 const H1 = styled.h1`
@@ -32,17 +40,35 @@ const Cards = styled.div`
   align-items: center;
   padding: 40px 0;
   border-top: solid 1.5px #8B8B8B;
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
 `;
 
 const CardsInfo = styled.div`
   display:flex;
   gap: 20px;
+
+  @media screen and (max-width: 1210px) {
+    flex-direction: column;
+  }
 `;
 
 const CardsInfoText = styled.div`
   display:flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 1210px) {
+    height: 120px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 170px;
+  }
 `;
 
 const CardsInfoTitle = styled.h3`
@@ -56,6 +82,11 @@ const CardsInfoParagraphe = styled.p`
 const CardsInfoTechnology = styled.div`
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 485px) {
+    padding: 20px 0;
+  }
 `;
 
 const CardsTechnology = styled.div`
@@ -74,6 +105,10 @@ const CardsTechnology = styled.div`
 const Imagem = styled.img`
   border-radius: 10px;
   transition: all ease-in-out .2s;
+
+  @media screen and (max-width: 460px) {
+    width: 250px;
+  }
 
   &:hover {
     transform: scale(1.05);

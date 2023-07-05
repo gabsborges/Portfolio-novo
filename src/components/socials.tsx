@@ -20,6 +20,14 @@ const Section = styled.div`
     position: fixed;
     left: 50px;
     bottom: 0px;
+
+    @media screen and (max-width: 1100px) {
+      left: 30px;
+  }
+
+    @media screen and (max-width: 740px) {
+      left: 20px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -56,13 +64,13 @@ export function Socials() {
                 <Link href="https://whatsa.me/5511948667700" target="_blank">
                     <WhatsAppFloat/>
                 </Link>
-                <Link href=""  target="_blank">
+                <Link href="https://www.linkedin.com/in/gabriel-henrique-10362110a/"  target="_blank">
                     <LinkedInFloat/>
                 </Link>
-                <Link href=""  target="_blank">
+                <Link href="https://github.com/gabsborges"  target="_blank">
                     <GitHubFloat/>
                 </Link>
-                <Link href=""  target="_blank">
+                <Link href="mailto:gabriel.borges_96&#64;hotmail.com"  target="_blank">
                     <MailFloat/>
                 </Link>
                 <Span/>

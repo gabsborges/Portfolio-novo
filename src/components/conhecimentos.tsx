@@ -25,6 +25,14 @@ interface Messages {
 
 const Section = styled.section`
   padding: 100px 0;
+
+  @media screen and (max-width: 870px) {
+    padding: 60px 0;
+  }
+
+  @media screen and (max-width: 590px) {
+      padding: 60px 0 60px 20px;
+    }
 `;
 
 const H1 = styled.h1`
@@ -37,12 +45,29 @@ const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+
+  @media screen and (max-width: 940px) {
+    gap: 35px;
+  }
+
+  @media screen and (max-width: 890px) {
+    height: 400px;
+    overflow-y: auto;
+  }
+
+  @media screen and (max-width: 890px) {
+    justify-content: center;
+  }
 `;
 
 
 const Label = styled.p`
   font-size: 18px;
   color: var(--primary-color);
+
+  @media screen and (max-width: 940px) {
+    font-size: 16px;
+  }
 `;
 
 const Card = styled.div<CardProps>`
@@ -58,8 +83,16 @@ const Card = styled.div<CardProps>`
   border-radius: 20px 0 0 0;
   cursor: pointer;
 
+  @media screen and (max-width: 825px) {
+    width: 124px;
+  }
+
   &:nth-child(8) ${Label} {
-    font-size: 14px
+    font-size: 14px;
+
+    @media screen and (max-width: 825px) {
+      font-size: 12px
+  }
   }
 
   &:nth-child(8) {
@@ -81,7 +114,6 @@ const MessageCard = styled.div<CardProps>`
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 18px;
   opacity: ${(props) => (props.show ? 1 : 0)};
   pointer-events: ${(props) => (props.show ? 'auto' : 'none')};
   transition: opacity 0.2s;
@@ -100,6 +132,18 @@ const Message = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 18px;
+
+  @media screen and (max-width: 870px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 825px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 560px) {
+    font-size: 12px;
+  }
 `;
 
 const menuItems = [

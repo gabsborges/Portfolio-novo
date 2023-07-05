@@ -19,13 +19,38 @@ const Section = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 780px) {
+      position: relative;
+      padding: 80px 0 30px 0;
+    }
+
+    @media screen and (max-width: 590px) {
+      padding: 80px 0 30px 20px;
+    }
+
   & > svg {
     animation: ${levitateAnimation} 2s ease-in-out infinite;
+
+    @media screen and (max-width: 1250px) {
+      width: 150px;
+    }
+    
+    @media screen and (max-width: 780px) {
+      position: absolute;
+      right: 0;
+      top: -45px;
+      width: 100px;
+    }
+
   }
 `;
 
 const TextDiv = styled.div`
   width: 65%;
+
+  @media screen and (max-width: 780px) {
+    width: 100%;
+    }
 `;
 
 const Title = styled.h1`
@@ -37,25 +62,30 @@ const Title = styled.h1`
 const Text = styled.p`
   color: var(--secondary-color);
   padding-bottom: 30px;
+
+  @media screen and (max-width: 1050px) {
+    font-size: 14px;
+  }
 `;
 
 const Button = styled.button`
   border: 1px solid var(--primary-color);
   background-color: transparent;
-  padding: 7px 18px 6px 18px;
+  padding: 12px 18px;
   border-radius: 20px;
   font-size: 18px;
   transition: all ease-in-out 0.3s;
   cursor: pointer;
   
+  @media screen and (max-width: 1050px) {
+    font-size: 16px;
+  }
+
   &:hover {
     border: 1px solid transparent;
     background-color: var(--primary-color);
   }
 `;
-
-
-
 
 export function SobreMim() {
   return (
@@ -68,7 +98,7 @@ export function SobreMim() {
         <Text>
           Sou uma pessoa bem organizada, solucionadora de problemas, funcionário independente com grande atenção aos detalhes. Interessado em todo o espectro de front e back-end e trabalhando em projetos ambiciosos com pessoas positivas.
         </Text>
-        <Button>Converse comigo</Button>
+        <Button as="a" href="https://whatsa.me/5511948667700" target="_blank">Converse comigo</Button>
       </TextDiv>
       <SobreMimIcon/>
     </Section>
