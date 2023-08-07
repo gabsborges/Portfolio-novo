@@ -1,6 +1,7 @@
 import './globals.css'
+import type { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Portfolio',
   description: 'Gabriel Borges - Portfolio',
 }
@@ -12,9 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body className='fade'>{children}</body>
     </html>
   )
 }
