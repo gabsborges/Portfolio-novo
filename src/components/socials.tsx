@@ -64,7 +64,7 @@ export function Socials() {
                 <Link href="https://whatsa.me/5511948667700" target="_blank">
                     <WhatsAppFloat/>
                 </Link>
-                <Link href="https://www.linkedin.com/in/gabriel-henrique-10362110a/"  target="_blank">
+                <Link href="https://www.linkedin.com/in/gabriel-henrique-borges/"  target="_blank">
                     <LinkedInFloat/>
                 </Link>
                 <Link href="https://github.com/gabsborges"  target="_blank">
